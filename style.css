@@ -1,29 +1,92 @@
-/* ============================================================
-   Hoja de estilos personalizada para el Blog "La 5ta Esencia"
-   Se carga despues de Bootstrap para sobreescribir estilos si es necesario
-   ============================================================ */
+/* ================================================================
+   HOJA DE ESTILOS PERSONALIZADA
+   Archivo: style.css
+   Proyecto: La 5ta Esencia - Blog con Bootstrap
 
-/* Task 2: Paleta de 5 colores para el sitio web
-   1. Dark (#212529) - Navbar, footer (bg-dark de Bootstrap)
-   2. Warning/Gold (#ffc107) - Acentos, marca, bordes (text-warning de Bootstrap)
-   3. Danger/Red (#dc3545) - Link activo del navbar (text-danger de Bootstrap)
-   4. Light (#f8f9fa) - Columnas laterales (bg-light de Bootstrap)
-   5. White (#ffffff) - Fondo principal del contenido
-*/
+   Este archivo se carga DESPUES de Bootstrap en el <head>:
+     1. Primero: bootstrap.min.css (estilos de Bootstrap)
+     2. Despues: style.css (nuestros estilos)
 
-/* Estilos base del documento */
+   Al cargarse despues, nuestros estilos tienen PRIORIDAD
+   sobre los de Bootstrap si hay conflicto.
+
+   Este es el UNICO archivo CSS para las 3 paginas (index, about, contact)
+   cumpliendo con la regla de "1 sola hoja de estilos"
+   ================================================================ */
+
+/* ================================================================
+   TAREA 2: Paleta de 5 colores para el sitio web
+
+   Usamos los colores PREDEFINIDOS de Bootstrap para mantener
+   coherencia. No necesitamos definir colores custom porque
+   Bootstrap ya los tiene como clases utilitarias:
+
+   Color 1: Dark (#212529)
+     - Donde se usa: Navbar y Footer
+     - Clase de Bootstrap: bg-dark
+
+   Color 2: Warning/Gold (#ffc107)
+     - Donde se usa: Logo, bordes de cards, titulos del footer
+     - Clase de Bootstrap: text-warning, border-warning, btn-warning
+
+   Color 3: Danger/Red (#dc3545)
+     - Donde se usa: Link activo en el navbar (pagina actual)
+     - Clase de Bootstrap: text-danger
+
+   Color 4: Light (#f8f9fa)
+     - Donde se usa: Columnas laterales AD y News
+     - Clase de Bootstrap: bg-light
+
+   Color 5: White (#ffffff)
+     - Donde se usa: Fondo del contenido principal
+     - Es el color por defecto del body, no necesita clase
+   ================================================================ */
+
+/* ================================================================
+   ESTILOS BASE DEL DOCUMENTO
+   Estos estilos se aplican a TODO el sitio
+   ================================================================ */
+
+/* html ocupa el 100% del ancho y alto de la ventana */
 html {
   height: 100%;
   width: 100%;
 }
 
+/* ================================================================
+   TAREA 7: FOOTER SIEMPRE ABAJO (Sticky Footer con Flexbox)
+
+   Problema: Si una pagina tiene poco contenido, el footer
+   queda flotando a mitad de la pantalla.
+
+   Solucion: Usamos Flexbox en el body:
+   - display: flex = activa flexbox
+   - flex-direction: column = los hijos se apilan verticalmente
+   - min-height: 100% = el body ocupa al menos toda la pantalla
+
+   Luego, el contenido principal (.container-fluid.mt-3) tiene
+   flex: 1, que significa "ocupa todo el espacio disponible",
+   empujando el footer hasta abajo.
+
+   Estructura visual:
+   +------------------+
+   | Navbar           |  (tamano fijo)
+   +------------------+
+   |                  |
+   | Contenido        |  (flex: 1 = se ESTIRA)
+   |                  |
+   +------------------+
+   | Footer           |  (tamano fijo, siempre abajo)
+   +------------------+
+   ================================================================ */
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* El contenido principal ocupa todo el espacio disponible para empujar el footer abajo */
+/* El contenido principal se estira para empujar el footer abajo */
+/* .container-fluid.mt-3 selecciona el div que contiene las 3 columnas */
 .container-fluid.mt-3 {
   flex: 1;
 }

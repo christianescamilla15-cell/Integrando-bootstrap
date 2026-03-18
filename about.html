@@ -1,52 +1,69 @@
 <!DOCTYPE html>
+<!-- Se declara el documento como HTML5 -->
 <html lang="es">
+<!-- lang="es" indica que el contenido esta en español -->
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Titulo de la pagina About Us -->
+
+  <!-- Titulo de la pestaña del navegador para esta pagina -->
   <title>La 5ta Esencia - About Us</title>
 
-  <!-- Task 1: Bootstrap CSS CDN -->
+  <!-- TAREA 1: Bootstrap CSS CDN - mismo en las 3 paginas -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Hoja de estilos personalizada -->
+  <!-- Hoja de estilos personalizada - despues de Bootstrap -->
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-  <!-- ============================================================ -->
-  <!-- Task 3: Navbar de Bootstrap - mismo en todas las paginas -->
-  <!-- En About Us, el link activo (rojo) es "About Us" segun el wireframe -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- TAREA 3: Navbar de Bootstrap - MISMO en todas las paginas -->
+  <!-- La UNICA diferencia es cual link tiene text-danger (rojo) -->
+  <!-- En About Us, el link activo es "About Us" -->
+  <!-- ================================================================ -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <!-- Marca/Logo del blog -->
+
+      <!-- Logo del blog - siempre visible, lleva al Home al hacer clic -->
       <a class="navbar-brand fw-bold text-warning" href="index.html">La 5ta Esencia</a>
 
-      <!-- Boton hamburguesa para pantallas pequenas -->
+      <!-- Boton hamburguesa para pantallas pequenas (<992px) -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links de navegacion - About Us esta activo (rojo) en esta pagina -->
+      <!-- Links de navegacion -->
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
+
+          <!-- Home - NO activo en esta pagina, por eso usa text-light (blanco) -->
           <li class="nav-item">
             <a class="nav-link text-light" href="index.html">Home</a>
           </li>
+
           <li class="nav-item d-flex align-items-center">
             <span class="text-secondary">|</span>
           </li>
-          <!-- Link activo - About Us en rojo como indica el wireframe -->
+
+          <!-- ======================================================== -->
+          <!-- About Us - ACTIVO en esta pagina -->
+          <!-- Tiene "active" para marcar que es la pagina actual -->
+          <!-- Tiene "text-danger" para el color rojo como en el wireframe -->
+          <!-- Tiene "fw-bold" para negritas y destacar -->
+          <!-- ======================================================== -->
           <li class="nav-item">
             <a class="nav-link active text-danger fw-bold" aria-current="page" href="about.html">About Us</a>
           </li>
+
           <li class="nav-item d-flex align-items-center">
             <span class="text-secondary">|</span>
           </li>
+
+          <!-- Contact Us - NO activo en esta pagina -->
           <li class="nav-item">
             <a class="nav-link text-light" href="contact.html">Contact Us</a>
           </li>
@@ -55,15 +72,19 @@
     </div>
   </nav>
 
-  <!-- ============================================================ -->
-  <!-- Task 5: Contenido principal del About Us -->
-  <!-- Misma estructura de 3 columnas: AD | Content | News -->
-  <!-- El contenido explica quienes somos y por que existe el proyecto -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- TAREA 5: Contenido principal del About Us -->
+  <!-- Misma estructura de 3 columnas que el wireframe: AD | Content | News -->
+  <!-- El contenido central explica: -->
+  <!--   1. Por que existe el proyecto -->
+  <!--   2. Los valores del equipo -->
+  <!--   3. Quienes son los miembros -->
+  <!-- ================================================================ -->
   <div class="container-fluid mt-3">
     <div class="row" style="min-height: 70vh;">
 
-      <!-- Columna izquierda: Espacio reservado para anuncios (AD) -->
+      <!-- COLUMNA IZQUIERDA: AD - vacia para futuras actualizaciones -->
+      <!-- col-lg-2 = 2 de 12 columnas en pantallas grandes -->
       <div class="col-lg-2 bg-light border-end">
         <div class="p-3 text-center text-muted">
           <h5 class="text-secondary">AD</h5>
@@ -71,23 +92,35 @@
         </div>
       </div>
 
-      <!-- Columna central: Contenido About Us -->
+      <!-- COLUMNA CENTRAL: Contenido About Us -->
+      <!-- col-lg-8 = 8 de 12 columnas (la columna mas grande) -->
       <div class="col-lg-8">
         <div class="p-4">
 
-          <!-- Titulo de la seccion -->
+          <!-- Titulo de la pagina -->
+          <!-- display-4 = titulo grande y elegante de Bootstrap -->
           <h1 class="display-4 text-center text-dark mb-4">Sobre Nosotros</h1>
+          <!-- lead = parrafo destacado, texto mas grande de lo normal -->
           <p class="lead text-center text-secondary mb-5">
             Conoce al equipo detras de La 5ta Esencia y nuestra pasion por los quesos gourmet.
           </p>
 
           <hr class="my-4">
 
-          <!-- Seccion: Por que existe este proyecto -->
+          <!-- ======================================================== -->
+          <!-- SECCION 1: Por que existe este proyecto -->
+          <!-- La rubrica pide: "contenido sobre por que existe este proyecto" -->
+          <!-- Se usa una card de Bootstrap para enmarcar la seccion -->
+          <!-- ======================================================== -->
           <section class="mb-5">
+            <!-- card con border-warning = borde dorado de la paleta -->
             <div class="card border-warning">
               <div class="card-body">
+                <!-- card-title = titulo dentro de la card -->
                 <h2 class="card-title text-dark">Por que existe La 5ta Esencia?</h2>
+
+                <!-- card-text = parrafos dentro de la card -->
+                <!-- Aqui explicamos el origen y proposito del proyecto -->
                 <p class="card-text">
                   La 5ta Esencia nacio de una idea simple pero poderosa: llevar la experiencia de las tablas de
                   quesos gourmet directamente a tu hogar. Creemos que los momentos especiales merecen sabores
@@ -100,21 +133,35 @@
                   que buscan experiencias culinarias unicas para cumpleanos, bodas, aniversarios y eventos
                   corporativos.
                 </p>
-                <!-- Imagen del equipo -->
+
+                <!-- Imagen del equipo trabajando -->
+                <!-- img-fluid = imagen responsive que se adapta al ancho -->
+                <!-- rounded = esquinas redondeadas -->
                 <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=400&fit=crop"
                   class="img-fluid rounded my-3" alt="Equipo de trabajo colaborando">
               </div>
             </div>
           </section>
 
-          <!-- Seccion: Nuestros valores -->
+          <!-- ======================================================== -->
+          <!-- SECCION 2: Nuestros valores -->
+          <!-- Se usa el componente list-group de Bootstrap para una lista -->
+          <!-- estilizada con los valores del equipo -->
+          <!-- ======================================================== -->
           <section class="mb-5">
             <div class="card border-warning">
               <div class="card-body">
                 <h2 class="card-title text-dark">Nuestros Valores</h2>
-                <!-- Lista de valores usando list-group de Bootstrap -->
+
+                <!-- ================================================== -->
+                <!-- list-group = componente de lista de Bootstrap -->
+                <!-- list-group-flush = sin bordes laterales ni esquinas -->
+                <!--   redondeadas, se integra mejor dentro de una card -->
+                <!-- Cada <li> es un list-group-item -->
+                <!-- ================================================== -->
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
+                    <!-- text-warning = nombre del valor en dorado -->
                     <strong class="text-warning">Calidad</strong> - Seleccionamos los mejores productos frescos y artesanales.
                   </li>
                   <li class="list-group-item">
@@ -134,7 +181,13 @@
             </div>
           </section>
 
-          <!-- Seccion: El equipo -->
+          <!-- ======================================================== -->
+          <!-- SECCION 3: El equipo -->
+          <!-- Presenta a los 10 miembros del equipo -->
+          <!-- Se usa un GRID ANIDADO (row + col-md-6) DENTRO de una card -->
+          <!-- Esto demuestra que el grid de Bootstrap se puede usar -->
+          <!-- en cualquier nivel, no solo para el layout principal -->
+          <!-- ======================================================== -->
           <section class="mb-5">
             <div class="card border-warning">
               <div class="card-body">
@@ -143,8 +196,15 @@
                   Somos un equipo de 10 personas apasionadas por la gastronomia y el servicio al cliente.
                   Cada uno aporta habilidades unicas que hacen posible La 5ta Esencia.
                 </p>
-                <!-- Grid de miembros del equipo usando Bootstrap grid -->
+
+                <!-- ================================================== -->
+                <!-- GRID ANIDADO dentro de la card -->
+                <!-- row = nueva fila del grid -->
+                <!-- col-md-6 = cada columna ocupa la mitad (6 de 12) -->
+                <!-- Esto crea 2 columnas de nombres dentro de la card -->
+                <!-- ================================================== -->
                 <div class="row">
+                  <!-- Primera columna: 5 miembros -->
                   <div class="col-md-6">
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">Fernando - Fundador</li>
@@ -154,6 +214,7 @@
                       <li class="list-group-item">Brenda - Logistica</li>
                     </ul>
                   </div>
+                  <!-- Segunda columna: 5 miembros -->
                   <div class="col-md-6">
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">Victor - Operaciones</li>
@@ -171,7 +232,7 @@
         </div>
       </div>
 
-      <!-- Columna derecha: Espacio reservado para noticias (News) -->
+      <!-- COLUMNA DERECHA: News - vacia para futuras actualizaciones -->
       <div class="col-lg-2 bg-light border-start">
         <div class="p-3 text-center text-muted">
           <h5 class="text-secondary">News</h5>
@@ -182,12 +243,14 @@
     </div>
   </div>
 
-  <!-- ============================================================ -->
-  <!-- Footer: Mismo footer en todas las paginas con nombres y emails -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- FOOTER: Mismo en las 3 paginas -->
+  <!-- Contiene los nombres del equipo y emails de contacto ficticios -->
+  <!-- ================================================================ -->
   <footer class="bg-dark text-light py-4 mt-3">
     <div class="container">
       <div class="row">
+        <!-- Primera mitad de nombres -->
         <div class="col-md-6">
           <h5 class="text-warning">Equipo - La 5ta Esencia</h5>
           <ul class="list-unstyled small">
@@ -198,6 +261,7 @@
             <li>Brenda - brenda@5taesencia.com</li>
           </ul>
         </div>
+        <!-- Segunda mitad de nombres -->
         <div class="col-md-6">
           <h5 class="text-warning">&nbsp;</h5>
           <ul class="list-unstyled small">
@@ -209,13 +273,14 @@
           </ul>
         </div>
       </div>
+      <!-- Copyright -->
       <div class="text-center mt-3 border-top pt-3">
         <p class="mb-0 small">&copy; 2026 La 5ta Esencia - Blog de Quesos Gourmet. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle CDN -->
+  <!-- TAREA 1: Bootstrap JS Bundle CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Script personalizado -->

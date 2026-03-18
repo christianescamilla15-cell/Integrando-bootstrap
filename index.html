@@ -1,57 +1,121 @@
 <!DOCTYPE html>
+<!-- Se declara el documento como HTML5 -->
 <html lang="es">
+<!-- lang="es" indica que el contenido de la pagina esta en español -->
 
 <head>
+  <!-- charset="utf-8" permite mostrar caracteres especiales como ñ, acentos, etc. -->
   <meta charset="utf-8">
+  <!-- viewport hace que la pagina se adapte al ancho del dispositivo (responsive) -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Titulo del sitio web del blog -->
+
+  <!-- ================================================================ -->
+  <!-- TITULO: aparece en la pestaña del navegador -->
+  <!-- ================================================================ -->
   <title>La 5ta Esencia - Blog</title>
 
-  <!-- Task 1: Bootstrap CSS CDN - se instala en el head para cargar los estilos de Bootstrap -->
+  <!-- ================================================================ -->
+  <!-- TAREA 1: Instalar Bootstrap con CDN -->
+  <!-- Este <link> carga el CSS de Bootstrap desde un servidor externo (CDN) -->
+  <!-- Se coloca en el <head> para que los estilos se carguen ANTES de que -->
+  <!-- el navegador muestre el contenido al usuario -->
+  <!-- Bootstrap 5.3.3 nos da clases predefinidas como bg-dark, text-warning, -->
+  <!-- container-fluid, row, col-lg-8, navbar, card, btn, etc. -->
+  <!-- ================================================================ -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Hoja de estilos personalizada - se carga despues de Bootstrap para poder sobreescribir estilos -->
+  <!-- ================================================================ -->
+  <!-- Hoja de estilos personalizada -->
+  <!-- IMPORTANTE: va DESPUES de Bootstrap para que nuestros estilos -->
+  <!-- tengan prioridad y puedan sobreescribir los de Bootstrap -->
+  <!-- ================================================================ -->
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-  <!-- ============================================================ -->
-  <!-- Task 3: Navbar refactorizado con el componente Navbar de Bootstrap -->
-  <!-- Se usa navbar-expand-lg para que sea responsive y colapse en pantallas pequenas -->
-  <!-- Los colores usan las clases de Bootstrap: navbar-dark y bg-dark -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- TAREA 3: Navbar refactorizado con Bootstrap -->
+  <!-- ================================================================ -->
+  <!-- Clase "navbar" = activa el componente navbar de Bootstrap -->
+  <!-- Clase "navbar-expand-lg" = en pantallas grandes (>=992px) muestra los -->
+  <!--   links en horizontal; en pantallas mas chicas los colapsa -->
+  <!-- Clase "navbar-dark" = los textos e iconos del navbar seran de color claro -->
+  <!-- Clase "bg-dark" = TAREA 2: fondo oscuro (#212529), uno de nuestros 5 colores -->
+  <!-- ================================================================ -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- container-fluid = contenedor que ocupa el 100% del ancho de la pantalla -->
     <div class="container-fluid">
-      <!-- Marca/Logo del blog -->
+
+      <!-- ============================================================ -->
+      <!-- MARCA/LOGO del sitio - siempre visible en cualquier pantalla -->
+      <!-- Clase "navbar-brand" = estilo especial de Bootstrap para el logo -->
+      <!-- Clase "fw-bold" = font-weight bold (texto en negritas) -->
+      <!-- Clase "text-warning" = TAREA 2: color dorado (#ffc107), uno de nuestros 5 colores -->
+      <!-- href="index.html" = al hacer clic regresa al Home -->
+      <!-- ============================================================ -->
       <a class="navbar-brand fw-bold text-warning" href="index.html">La 5ta Esencia</a>
 
-      <!-- Boton hamburguesa para pantallas pequenas (responsive) -->
+      <!-- ============================================================ -->
+      <!-- BOTON HAMBURGUESA - solo aparece en pantallas pequenas -->
+      <!-- Cuando la pantalla es menor a 992px (lg), los links se ocultan -->
+      <!-- y aparece este boton con 3 lineas horizontales (hamburguesa) -->
+      <!-- data-bs-toggle="collapse" = le dice a Bootstrap que este boton -->
+      <!--   va a mostrar/ocultar algo -->
+      <!-- data-bs-target="#navbarNav" = le dice QUE va a mostrar/ocultar: -->
+      <!--   el div que tiene id="navbarNav" (los links de abajo) -->
+      <!-- ============================================================ -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- navbar-toggler-icon = el icono de las 3 lineas horizontales -->
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links de navegacion - Home, About Us, Contact Us segun el wireframe -->
+      <!-- ============================================================ -->
+      <!-- LINKS DE NAVEGACION -->
+      <!-- Clase "collapse navbar-collapse" = este contenido se colapsa/expande -->
+      <!--   cuando se hace clic en el boton hamburguesa -->
+      <!-- id="navbarNav" = este es el ID que referencia el boton de arriba -->
+      <!-- Clase "justify-content-center" = centra los links horizontalmente -->
+      <!-- ============================================================ -->
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+        <!-- navbar-nav = lista de navegacion con estilo de Bootstrap -->
         <ul class="navbar-nav">
-          <!-- Link activo para Home (pagina actual) - se usa text-danger para el rojo como en el wireframe -->
+
+          <!-- ======================================================== -->
+          <!-- LINK HOME - PAGINA ACTUAL (activo) -->
+          <!-- Clase "nav-item" = cada elemento de la lista del navbar -->
+          <!-- Clase "nav-link" = estilo de link de navegacion -->
+          <!-- Clase "active" = indica que esta es la pagina actual -->
+          <!-- Clase "text-danger" = TAREA 2: color rojo (#dc3545) -->
+          <!--   Se usa para el link activo, igual que en el wireframe -->
+          <!-- Clase "fw-bold" = negritas para destacar la pagina activa -->
+          <!-- aria-current="page" = accesibilidad: indica pagina actual -->
+          <!-- ======================================================== -->
           <li class="nav-item">
             <a class="nav-link active text-danger fw-bold" aria-current="page" href="index.html">Home</a>
           </li>
-          <!-- Separador visual entre links -->
+
+          <!-- Separador visual "|" entre los links, como muestra el wireframe -->
+          <!-- d-flex align-items-center = usa flexbox para centrar el "|" verticalmente -->
+          <!-- text-secondary = color gris para que no distraiga -->
           <li class="nav-item d-flex align-items-center">
             <span class="text-secondary">|</span>
           </li>
-          <!-- Link a la pagina About Us -->
+
+          <!-- LINK ABOUT US - no activo en esta pagina, por eso usa text-light (blanco) -->
           <li class="nav-item">
             <a class="nav-link text-light" href="about.html">About Us</a>
           </li>
-          <!-- Separador visual entre links -->
+
+          <!-- Separador visual -->
           <li class="nav-item d-flex align-items-center">
             <span class="text-secondary">|</span>
           </li>
-          <!-- Link a la pagina Contact Us -->
+
+          <!-- LINK CONTACT US - no activo en esta pagina -->
           <li class="nav-item">
             <a class="nav-link text-light" href="contact.html">Contact Us</a>
           </li>
@@ -60,46 +124,90 @@
     </div>
   </nav>
 
-  <!-- ============================================================ -->
-  <!-- Task 4: Contenido principal del Home Page -->
-  <!-- Se usa el grid system de Bootstrap con 3 columnas segun el wireframe: -->
-  <!-- col-2 (AD) | col-8 (Content) | col-2 (News) -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- TAREA 4: Contenido principal del Home Page -->
+  <!-- Se usa el GRID SYSTEM de Bootstrap para crear el layout de 3 columnas -->
+  <!-- que muestra el wireframe: AD (izquierda) | Content (centro) | News (derecha) -->
+  <!-- ================================================================ -->
+  <!-- container-fluid = contenedor al 100% del ancho -->
+  <!-- mt-3 = margin-top nivel 3 (espacio arriba del navbar) -->
+  <!-- ================================================================ -->
   <div class="container-fluid mt-3">
+
+    <!-- ============================================================ -->
+    <!-- ROW = crea una fila en el grid de Bootstrap -->
+    <!-- Bootstrap divide cada fila en 12 columnas -->
+    <!-- Nosotros usamos: 2 + 8 + 2 = 12 columnas -->
+    <!-- min-height: 70vh = la fila ocupa al menos el 70% de la pantalla -->
+    <!-- ============================================================ -->
     <div class="row" style="min-height: 70vh;">
 
-      <!-- ======================================================== -->
-      <!-- Columna izquierda: Espacio reservado para anuncios (AD) -->
-      <!-- Segun las instrucciones, este espacio queda vacio para futuras actualizaciones -->
-      <!-- ======================================================== -->
+      <!-- ============================================================ -->
+      <!-- COLUMNA IZQUIERDA: AD (Anuncios) -->
+      <!-- col-lg-2 = ocupa 2 de las 12 columnas en pantallas grandes -->
+      <!--   En pantallas chicas ocupa el 100% y se apila arriba -->
+      <!-- bg-light = TAREA 2: fondo gris claro (#f8f9fa) -->
+      <!-- border-end = borde en el lado derecho (separador visual) -->
+      <!-- Esta columna queda VACIA para futuras actualizaciones -->
+      <!-- ============================================================ -->
       <div class="col-lg-2 bg-light border-end">
         <div class="p-3 text-center text-muted">
+          <!-- text-secondary = texto gris -->
           <h5 class="text-secondary">AD</h5>
+          <!-- small = texto pequeno, fst-italic = cursiva -->
           <p class="small fst-italic">Espacio reservado para anunciantes</p>
         </div>
       </div>
 
-      <!-- ======================================================== -->
-      <!-- Columna central: Contenido principal del blog -->
-      <!-- Aqui va el contenido con texto, imagenes y videos segun Task 4 -->
-      <!-- Se usan clases de Bootstrap para tipografia y espaciado -->
-      <!-- ======================================================== -->
+      <!-- ============================================================ -->
+      <!-- COLUMNA CENTRAL: Contenido principal -->
+      <!-- col-lg-8 = ocupa 8 de las 12 columnas (la mas grande) -->
+      <!-- Aqui va todo el contenido del blog: articulos, imagenes, videos -->
+      <!-- ============================================================ -->
       <div class="col-lg-8">
+        <!-- p-4 = padding nivel 4 (espacio interno en todos los lados) -->
         <div class="p-4">
 
-          <!-- Encabezado principal del blog con clases de Bootstrap para texto -->
+          <!-- ======================================================== -->
+          <!-- TITULO PRINCIPAL del blog -->
+          <!-- display-4 = clase de Bootstrap para titulos grandes y elegantes -->
+          <!--   Es mas grande que un <h1> normal -->
+          <!-- text-center = centra el texto horizontalmente -->
+          <!-- text-dark = texto color oscuro (#212529) -->
+          <!-- mb-4 = margin-bottom nivel 4 (espacio abajo) -->
+          <!-- ======================================================== -->
           <h1 class="display-4 text-center text-dark mb-4">Bienvenidos a La 5ta Esencia</h1>
+
+          <!-- ======================================================== -->
+          <!-- SUBTITULO descriptivo -->
+          <!-- lead = clase de Bootstrap para parrafos destacados -->
+          <!--   El texto es mas grande que un <p> normal -->
+          <!-- text-secondary = texto gris (#6c757d) -->
+          <!-- mb-5 = margin-bottom nivel 5 (espacio grande abajo) -->
+          <!-- ======================================================== -->
           <p class="lead text-center text-secondary mb-5">
             El blog donde exploramos el arte de las tablas de quesos gourmet, maridajes y experiencias culinarias.
           </p>
 
+          <!-- Linea horizontal separadora -->
+          <!-- my-4 = margin vertical (arriba y abajo) nivel 4 -->
           <hr class="my-4">
 
-          <!-- Primer articulo del blog - usa card de Bootstrap para estructura -->
+          <!-- ======================================================== -->
+          <!-- PRIMER ARTICULO DEL BLOG -->
+          <!-- Se usa el componente CARD de Bootstrap para enmarcar cada articulo -->
+          <!-- mb-5 = margin-bottom nivel 5 (espacio entre articulos) -->
+          <!-- ======================================================== -->
           <article class="mb-5">
+            <!-- card = componente contenedor de Bootstrap con borde -->
+            <!-- border-warning = TAREA 2: borde dorado (#ffc107) -->
             <div class="card border-warning">
+              <!-- card-body = padding interno de la card -->
               <div class="card-body">
+                <!-- card-title = titulo de la card (mas grande) -->
                 <h2 class="card-title text-dark">El Arte de Armar una Tabla de Quesos Perfecta</h2>
+                <!-- card-text = parrafo de la card -->
+                <!-- small = texto mas pequeno para la fecha -->
                 <p class="card-text text-secondary small">Publicado el 15 de marzo, 2026 | Por el equipo de La 5ta Esencia</p>
                 <p class="card-text">
                   Crear una tabla de quesos no es solo colocar ingredientes al azar. Es una experiencia sensorial
@@ -111,14 +219,24 @@
                   o el manchego curado, la clave esta en el equilibrio. Acompana con frutas frescas, frutos secos,
                   miel y un buen vino para completar la experiencia.
                 </p>
-                <!-- Imagen representativa usando una imagen placeholder -->
+                <!-- ================================================== -->
+                <!-- IMAGEN dentro del articulo -->
+                <!-- img-fluid = hace la imagen RESPONSIVE: se adapta al ancho -->
+                <!--   del contenedor sin desbordarse -->
+                <!-- rounded = esquinas redondeadas -->
+                <!-- my-3 = margin vertical nivel 3 -->
+                <!-- alt = texto alternativo para accesibilidad -->
+                <!-- ================================================== -->
                 <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=800&h=400&fit=crop"
                   class="img-fluid rounded my-3" alt="Tabla de quesos gourmet">
               </div>
             </div>
           </article>
 
-          <!-- Segundo articulo del blog -->
+          <!-- ======================================================== -->
+          <!-- SEGUNDO ARTICULO DEL BLOG -->
+          <!-- Misma estructura de card que el primero -->
+          <!-- ======================================================== -->
           <article class="mb-5">
             <div class="card border-warning">
               <div class="card-body">
@@ -137,13 +255,22 @@
             </div>
           </article>
 
-          <!-- Tercer articulo del blog -->
+          <!-- ======================================================== -->
+          <!-- TERCER ARTICULO DEL BLOG -->
+          <!-- Este articulo usa una LISTA NUMERADA de Bootstrap -->
+          <!-- ======================================================== -->
           <article class="mb-5">
             <div class="card border-warning">
               <div class="card-body">
                 <h2 class="card-title text-dark">5 Tips para Tu Primer Evento con Tabla de Quesos</h2>
                 <p class="card-text text-secondary small">Publicado el 5 de marzo, 2026 | Por el equipo de La 5ta Esencia</p>
-                <!-- Lista usando clases de Bootstrap -->
+                <!-- ================================================== -->
+                <!-- LISTA con componente list-group de Bootstrap -->
+                <!-- list-group = contenedor de lista con estilo Bootstrap -->
+                <!-- list-group-numbered = agrega numeros automaticamente -->
+                <!-- list-group-flush = sin bordes laterales ni esquinas -->
+                <!-- list-group-item = cada elemento de la lista -->
+                <!-- ================================================== -->
                 <ol class="list-group list-group-numbered list-group-flush">
                   <li class="list-group-item">Calcula aproximadamente 150g de queso por persona.</li>
                   <li class="list-group-item">Incluye al menos 3 tipos diferentes de queso (suave, semi-curado y curado).</li>
@@ -155,23 +282,37 @@
             </div>
           </article>
 
-          <!-- Video embebido de YouTube como contenido multimedia -->
+          <!-- ======================================================== -->
+          <!-- VIDEO DE YOUTUBE embebido -->
+          <!-- text-center = centra todo el bloque -->
+          <!-- mb-4 = margin-bottom nivel 4 -->
+          <!-- ======================================================== -->
           <div class="text-center mb-4">
             <h3 class="text-dark mb-3">Aprende con nosotros</h3>
+            <!-- ================================================== -->
+            <!-- ratio ratio-16x9 = componente de Bootstrap que crea un -->
+            <!--   contenedor con proporcion 16:9 (formato de video estandar) -->
+            <!--   El iframe se adapta automaticamente al tamano del contenedor -->
+            <!--   Esto hace el video RESPONSIVE en cualquier pantalla -->
+            <!-- ================================================== -->
             <div class="ratio ratio-16x9">
               <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video sobre tablas de quesos"
                 allowfullscreen></iframe>
             </div>
+            <!-- text-muted = texto gris apagado -->
             <p class="text-muted mt-2 small">Video: Como armar una tabla de quesos paso a paso</p>
           </div>
 
         </div>
       </div>
 
-      <!-- ======================================================== -->
-      <!-- Columna derecha: Espacio reservado para noticias (News) -->
-      <!-- Segun las instrucciones, este espacio queda vacio para futuras actualizaciones -->
-      <!-- ======================================================== -->
+      <!-- ============================================================ -->
+      <!-- COLUMNA DERECHA: News (Noticias) -->
+      <!-- col-lg-2 = ocupa 2 de las 12 columnas -->
+      <!-- bg-light = TAREA 2: fondo gris claro -->
+      <!-- border-start = borde en el lado izquierdo (separador visual) -->
+      <!-- Esta columna queda VACIA para futuras actualizaciones -->
+      <!-- ============================================================ -->
       <div class="col-lg-2 bg-light border-start">
         <div class="p-3 text-center text-muted">
           <h5 class="text-secondary">News</h5>
@@ -180,18 +321,31 @@
       </div>
 
     </div>
+    <!-- Fin del row (fila del grid) -->
   </div>
+  <!-- Fin del container-fluid -->
 
-  <!-- ============================================================ -->
-  <!-- Footer: Contiene los nombres del equipo y emails de contacto -->
-  <!-- Se usa bg-dark y text-light de Bootstrap para el estilo oscuro -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- FOOTER: Pie de pagina con nombres del equipo y emails -->
+  <!-- Es el MISMO footer en las 3 paginas (index, about, contact) -->
+  <!-- bg-dark = TAREA 2: fondo oscuro -->
+  <!-- text-light = texto blanco para que se lea sobre el fondo oscuro -->
+  <!-- py-4 = padding vertical (arriba y abajo) nivel 4 -->
+  <!-- mt-3 = margin-top nivel 3 (espacio entre el contenido y el footer) -->
+  <!-- ================================================================ -->
   <footer class="bg-dark text-light py-4 mt-3">
+    <!-- container = contenedor con ancho maximo centrado (no es fluid) -->
     <div class="container">
+      <!-- row = fila del grid para dividir los nombres en 2 columnas -->
       <div class="row">
-        <!-- Informacion del equipo -->
+
+        <!-- Primera columna de nombres (5 miembros) -->
+        <!-- col-md-6 = ocupa 6 de 12 columnas (la mitad) en pantallas medianas -->
         <div class="col-md-6">
+          <!-- text-warning = TAREA 2: titulo dorado -->
           <h5 class="text-warning">Equipo - La 5ta Esencia</h5>
+          <!-- list-unstyled = quita los puntos/bullets de la lista -->
+          <!-- small = texto mas pequeno -->
           <ul class="list-unstyled small">
             <li>Fernando - fernando@5taesencia.com</li>
             <li>Daniel - daniel@5taesencia.com</li>
@@ -200,7 +354,10 @@
             <li>Brenda - brenda@5taesencia.com</li>
           </ul>
         </div>
+
+        <!-- Segunda columna de nombres (5 miembros) -->
         <div class="col-md-6">
+          <!-- &nbsp; = espacio vacio para alinear con el titulo de la izquierda -->
           <h5 class="text-warning">&nbsp;</h5>
           <ul class="list-unstyled small">
             <li>Victor - victor@5taesencia.com</li>
@@ -211,18 +368,30 @@
           </ul>
         </div>
       </div>
-      <!-- Copyright con clase de Bootstrap para texto centrado -->
+
+      <!-- Linea de copyright -->
+      <!-- border-top = linea separadora arriba -->
+      <!-- pt-3 = padding-top nivel 3 (espacio arriba de la linea) -->
+      <!-- mb-0 = sin margin-bottom (elimina espacio extra abajo) -->
       <div class="text-center mt-3 border-top pt-3">
         <p class="mb-0 small">&copy; 2026 La 5ta Esencia - Blog de Quesos Gourmet. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Task 1: Bootstrap JS Bundle CDN - se instala antes del cierre del body -->
-  <!-- Incluye Popper.js necesario para componentes como dropdowns y tooltips -->
+  <!-- ================================================================ -->
+  <!-- TAREA 1: Bootstrap JS Bundle CDN -->
+  <!-- Se coloca ANTES del cierre de </body> para no bloquear la carga del HTML -->
+  <!-- El "bundle" incluye Popper.js que Bootstrap necesita para: -->
+  <!--   - El boton hamburguesa del navbar (collapse) -->
+  <!--   - Dropdowns -->
+  <!--   - Tooltips -->
+  <!--   - Alertas con dismiss -->
+  <!-- Sin este script, el navbar NO se colapsaria en movil -->
+  <!-- ================================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script personalizado del proyecto -->
+  <!-- Script personalizado del proyecto (vacio por ahora en el Home) -->
   <script src="script.js"></script>
 
 </body>

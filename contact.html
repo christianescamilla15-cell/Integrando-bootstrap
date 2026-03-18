@@ -1,28 +1,32 @@
 <!DOCTYPE html>
+<!-- Se declara el documento como HTML5 -->
 <html lang="es">
+<!-- lang="es" indica que el contenido esta en español -->
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Titulo de la pagina Contact Us -->
+
+  <!-- Titulo de la pestaña del navegador para esta pagina -->
   <title>La 5ta Esencia - Contact Us</title>
 
-  <!-- Task 1: Bootstrap CSS CDN -->
+  <!-- TAREA 1: Bootstrap CSS CDN - mismo en las 3 paginas -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Hoja de estilos personalizada -->
+  <!-- Hoja de estilos personalizada - despues de Bootstrap -->
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-  <!-- ============================================================ -->
-  <!-- Task 3: Navbar de Bootstrap - mismo en todas las paginas -->
-  <!-- En Contact Us, el link activo (rojo) es "Contact Us" segun el wireframe -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- TAREA 3: Navbar de Bootstrap - MISMO en todas las paginas -->
+  <!-- En Contact Us, el link activo (rojo) es "Contact Us" -->
+  <!-- ================================================================ -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <!-- Marca/Logo del blog -->
+
+      <!-- Logo del blog -->
       <a class="navbar-brand fw-bold text-warning" href="index.html">La 5ta Esencia</a>
 
       <!-- Boton hamburguesa para pantallas pequenas -->
@@ -31,22 +35,34 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links de navegacion - Contact Us esta activo (rojo) en esta pagina -->
+      <!-- Links de navegacion -->
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
+
+          <!-- Home - NO activo en esta pagina -->
           <li class="nav-item">
             <a class="nav-link text-light" href="index.html">Home</a>
           </li>
+
           <li class="nav-item d-flex align-items-center">
             <span class="text-secondary">|</span>
           </li>
+
+          <!-- About Us - NO activo en esta pagina -->
           <li class="nav-item">
             <a class="nav-link text-light" href="about.html">About Us</a>
           </li>
+
           <li class="nav-item d-flex align-items-center">
             <span class="text-secondary">|</span>
           </li>
-          <!-- Link activo - Contact Us en rojo como indica el wireframe -->
+
+          <!-- ======================================================== -->
+          <!-- Contact Us - ACTIVO en esta pagina -->
+          <!-- "active" = marca como pagina actual -->
+          <!-- "text-danger" = color rojo como en el wireframe -->
+          <!-- "fw-bold" = negritas -->
+          <!-- ======================================================== -->
           <li class="nav-item">
             <a class="nav-link active text-danger fw-bold" aria-current="page" href="contact.html">Contact Us</a>
           </li>
@@ -55,16 +71,18 @@
     </div>
   </nav>
 
-  <!-- ============================================================ -->
-  <!-- Task 6: Contenido principal del Contact Us -->
+  <!-- ================================================================ -->
+  <!-- TAREA 6: Contenido principal del Contact Us -->
   <!-- Misma estructura de 3 columnas: AD | Content | News -->
-  <!-- Contiene un formulario de Bootstrap con email, textarea y boton -->
-  <!-- Al hacer clic en el boton se muestra una alerta live con dismiss -->
-  <!-- ============================================================ -->
+  <!-- El contenido central tiene: -->
+  <!--   1. Un formulario de Bootstrap con email y textarea -->
+  <!--   2. Un boton que al hacer clic muestra una alerta live -->
+  <!--   3. La alerta tiene un boton de dismiss (X) para cerrarla -->
+  <!-- ================================================================ -->
   <div class="container-fluid mt-3">
     <div class="row" style="min-height: 70vh;">
 
-      <!-- Columna izquierda: Espacio reservado para anuncios (AD) -->
+      <!-- COLUMNA IZQUIERDA: AD - vacia para futuras actualizaciones -->
       <div class="col-lg-2 bg-light border-end">
         <div class="p-3 text-center text-muted">
           <h5 class="text-secondary">AD</h5>
@@ -72,11 +90,12 @@
         </div>
       </div>
 
-      <!-- Columna central: Formulario de contacto -->
+      <!-- COLUMNA CENTRAL: Formulario de contacto -->
+      <!-- col-lg-8 = 8 de 12 columnas -->
       <div class="col-lg-8">
         <div class="p-4">
 
-          <!-- Titulo de la seccion -->
+          <!-- Titulo de la pagina -->
           <h1 class="display-4 text-center text-dark mb-4">Contactanos</h1>
           <p class="lead text-center text-secondary mb-5">
             Envianos un mensaje y nos pondremos en contacto contigo lo antes posible.
@@ -84,23 +103,43 @@
 
           <hr class="my-4">
 
-          <!-- ====================================================== -->
-          <!-- Contenedor para la alerta live - Task 6 requiere que -->
-          <!-- al hacer clic en enviar, aparezca una alerta con dismiss -->
-          <!-- ====================================================== -->
+          <!-- ======================================================== -->
+          <!-- CONTENEDOR PARA LA ALERTA LIVE -->
+          <!-- Este div esta VACIO al principio -->
+          <!-- Cuando el usuario hace clic en "Enviar Mensaje", el JavaScript -->
+          <!-- de abajo inserta una alerta de Bootstrap DENTRO de este div -->
+          <!-- ======================================================== -->
           <div id="liveAlertPlaceholder"></div>
 
-          <!-- ====================================================== -->
-          <!-- Task 6: Formulario de Bootstrap con email y textarea -->
-          <!-- Se usa el componente Form de Bootstrap -->
-          <!-- El boton dispara una alerta live con JavaScript -->
-          <!-- ====================================================== -->
+          <!-- ======================================================== -->
+          <!-- TAREA 6: Formulario de Bootstrap -->
+          <!-- Se usa el componente FORM de Bootstrap con: -->
+          <!--   - Campo de email (input type="email") -->
+          <!--   - Campo de asunto (input type="text") -->
+          <!--   - Campo de mensaje (textarea) -->
+          <!--   - Boton de envio (button type="submit") -->
+          <!-- El boton esta CONECTADO al formulario mediante type="submit" -->
+          <!-- ======================================================== -->
           <div class="card border-warning">
             <div class="card-body">
               <h2 class="card-title text-dark mb-4">Enviar Mensaje</h2>
 
+              <!-- id="contactForm" = ID para que el JavaScript pueda -->
+              <!--   encontrar este formulario y escuchar el evento submit -->
               <form id="contactForm">
-                <!-- Campo de Email - componente form de Bootstrap -->
+
+                <!-- ================================================== -->
+                <!-- CAMPO DE EMAIL -->
+                <!-- mb-3 = margin-bottom nivel 3 (espacio entre campos) -->
+                <!-- form-label = estilo de Bootstrap para etiquetas -->
+                <!-- fw-bold = negritas en la etiqueta -->
+                <!-- form-control = estilo de Bootstrap para inputs -->
+                <!--   (agrega bordes redondeados, padding, foco azul) -->
+                <!-- type="email" = el navegador valida que sea un email -->
+                <!-- required = campo obligatorio, no se puede enviar vacio -->
+                <!-- placeholder = texto gris de ejemplo dentro del campo -->
+                <!-- form-text = texto de ayuda pequeno debajo del campo -->
+                <!-- ================================================== -->
                 <div class="mb-3">
                   <label for="emailInput" class="form-label fw-bold">Correo Electronico</label>
                   <input type="email" class="form-control" id="emailInput"
@@ -108,22 +147,38 @@
                   <div class="form-text">Nunca compartiremos tu correo con nadie.</div>
                 </div>
 
-                <!-- Campo de Asunto -->
+                <!-- ================================================== -->
+                <!-- CAMPO DE ASUNTO -->
+                <!-- Mismo patron: mb-3, form-label, form-control, required -->
+                <!-- type="text" = campo de texto normal -->
+                <!-- ================================================== -->
                 <div class="mb-3">
                   <label for="subjectInput" class="form-label fw-bold">Asunto</label>
                   <input type="text" class="form-control" id="subjectInput"
                     placeholder="Escribe el asunto de tu mensaje" required>
                 </div>
 
-                <!-- Campo de Textarea - componente form de Bootstrap -->
+                <!-- ================================================== -->
+                <!-- CAMPO DE TEXTAREA (mensaje) -->
+                <!-- <textarea> en lugar de <input> para texto largo -->
+                <!-- form-control = mismo estilo de Bootstrap que los inputs -->
+                <!-- rows="5" = altura inicial de 5 lineas -->
+                <!-- required = campo obligatorio -->
+                <!-- ================================================== -->
                 <div class="mb-3">
                   <label for="messageTextarea" class="form-label fw-bold">Mensaje</label>
                   <textarea class="form-control" id="messageTextarea" rows="5"
                     placeholder="Escribe tu mensaje aqui..." required></textarea>
                 </div>
 
-                <!-- Boton de envio - conectado al email y textarea -->
-                <!-- Al hacer clic dispara la alerta live mediante JavaScript -->
+                <!-- ================================================== -->
+                <!-- BOTON DE ENVIO -->
+                <!-- type="submit" = al hacer clic, dispara el evento "submit" -->
+                <!--   del formulario, que el JavaScript de abajo escucha -->
+                <!-- btn = estilo base de boton de Bootstrap -->
+                <!-- btn-warning = TAREA 2: color dorado (#ffc107) -->
+                <!-- fw-bold = texto en negritas -->
+                <!-- ================================================== -->
                 <button type="submit" class="btn btn-warning fw-bold" id="sendButton">
                   Enviar Mensaje
                 </button>
@@ -131,10 +186,15 @@
             </div>
           </div>
 
-          <!-- Informacion de contacto adicional -->
+          <!-- ======================================================== -->
+          <!-- INFORMACION DE CONTACTO ADICIONAL -->
+          <!-- Card extra con datos de contacto del negocio -->
+          <!-- mt-4 = margin-top nivel 4 (espacio arriba) -->
+          <!-- ======================================================== -->
           <div class="card border-warning mt-4">
             <div class="card-body">
               <h3 class="card-title text-dark">Informacion de Contacto</h3>
+              <!-- list-unstyled = quita los puntos de la lista -->
               <ul class="list-unstyled mt-3">
                 <li class="mb-2"><strong class="text-warning">Email:</strong> 5taesencia@vinoyquesito.com</li>
                 <li class="mb-2"><strong class="text-warning">Telefono:</strong> (555) 123 4567</li>
@@ -146,7 +206,7 @@
         </div>
       </div>
 
-      <!-- Columna derecha: Espacio reservado para noticias (News) -->
+      <!-- COLUMNA DERECHA: News - vacia para futuras actualizaciones -->
       <div class="col-lg-2 bg-light border-start">
         <div class="p-3 text-center text-muted">
           <h5 class="text-secondary">News</h5>
@@ -157,9 +217,9 @@
     </div>
   </div>
 
-  <!-- ============================================================ -->
-  <!-- Footer: Mismo footer en todas las paginas con nombres y emails -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- FOOTER: Mismo en las 3 paginas -->
+  <!-- ================================================================ -->
   <footer class="bg-dark text-light py-4 mt-3">
     <div class="container">
       <div class="row">
@@ -190,44 +250,86 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle CDN -->
+  <!-- TAREA 1: Bootstrap JS Bundle CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Script personalizado -->
   <script src="script.js"></script>
 
-  <!-- ============================================================ -->
-  <!-- Task 6: Script para la alerta live cuando el usuario envia el formulario -->
-  <!-- Muestra un alert de Bootstrap con boton de dismiss -->
-  <!-- ============================================================ -->
+  <!-- ================================================================ -->
+  <!-- TAREA 6: JavaScript para la ALERTA LIVE -->
+  <!-- Este script hace que cuando el usuario haga clic en "Enviar Mensaje", -->
+  <!-- aparezca una alerta verde de Bootstrap que dice "Message sent!" -->
+  <!-- con un boton X para cerrarla (dismiss) -->
+  <!-- ================================================================ -->
   <script>
-    // Funcion que crea una alerta live de Bootstrap con boton de dismiss
-    // Se activa cuando el usuario hace clic en "Enviar Mensaje"
+    // ================================================================
+    // PASO 1: Obtener referencia al contenedor vacio donde aparecera la alerta
+    // document.getElementById busca el <div id="liveAlertPlaceholder">
+    // que esta arriba del formulario
+    // ================================================================
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
 
+    // ================================================================
+    // PASO 2: Funcion que CREA la alerta dinamicamente
+    // Recibe dos parametros:
+    //   - message: el texto que mostrara la alerta (ej: "Message sent!")
+    //   - type: el tipo de alerta de Bootstrap (ej: "success" = verde)
+    //     Otros tipos: "danger" (rojo), "warning" (amarillo), "info" (azul)
+    // ================================================================
     function showAlert(message, type) {
-      // Crear el HTML de la alerta usando el componente Alert de Bootstrap
+      // Crear un nuevo elemento <div> en el DOM
       const wrapper = document.createElement('div');
+
+      // Llenar ese div con el HTML de una alerta de Bootstrap:
       wrapper.innerHTML = [
+        // "alert" = componente de alerta de Bootstrap
+        // "alert-success" = alerta color verde (porque type = "success")
+        // "alert-dismissible" = permite cerrar la alerta con un boton
+        // "fade show" = agrega animacion de aparicion suave
+        // role="alert" = accesibilidad: indica que es una alerta
         '<div class="alert alert-' + type + ' alert-dismissible fade show" role="alert">',
+
+        // <strong> = texto en negritas con el mensaje
         '   <strong>' + message + '</strong>',
+
+        // "btn-close" = boton X de Bootstrap para cerrar
+        // "data-bs-dismiss="alert"" = le dice a Bootstrap que al hacer clic
+        //   en este boton, CIERRE la alerta automaticamente
+        // aria-label="Close" = accesibilidad
         '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
         '</div>'
-      ].join('');
+      ].join(''); // .join('') une todo el array en un solo string HTML
 
-      // Insertar la alerta en el placeholder
+      // Insertar la alerta dentro del contenedor placeholder
+      // .append() agrega el elemento al final del contenedor
+      // Si el usuario hace clic varias veces, se apilan las alertas
       alertPlaceholder.append(wrapper);
     }
 
-    // Escuchar el evento submit del formulario
+    // ================================================================
+    // PASO 3: Escuchar cuando el usuario ENVIA el formulario
+    // document.getElementById('contactForm') busca el <form id="contactForm">
+    // .addEventListener('submit', ...) escucha el evento de envio
+    // El evento "submit" se dispara cuando:
+    //   - El usuario hace clic en el boton "Enviar Mensaje"
+    //   - O presiona Enter dentro de un campo del formulario
+    // ================================================================
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-      // Prevenir que el formulario recargue la pagina
+
+      // event.preventDefault() EVITA que la pagina se recargue
+      // Sin esto, el formulario haria un submit normal y la pagina
+      // se recargaria, perdiendo la alerta que queremos mostrar
       event.preventDefault();
 
-      // Mostrar la alerta live de "Message sent" con opcion de dismiss
+      // Llamar a la funcion showAlert para crear y mostrar la alerta
+      // Parametro 1: el mensaje que vera el usuario
+      // Parametro 2: "success" = alerta verde de Bootstrap
       showAlert('Message sent! Tu mensaje ha sido enviado exitosamente.', 'success');
 
-      // Limpiar el formulario despues de enviar
+      // this.reset() limpia TODOS los campos del formulario
+      // (email, asunto, mensaje quedan vacios de nuevo)
+      // "this" se refiere al formulario porque estamos dentro de su evento
       this.reset();
     });
   </script>
