@@ -1,0 +1,29 @@
+/* ============================================================
+   Hoja de estilos personalizada para el Blog "La 5ta Esencia"
+   Se carga despues de Bootstrap para sobreescribir estilos si es necesario
+   ============================================================ */
+
+/* Task 2: Paleta de 5 colores para el sitio web
+   1. Dark (#212529) - Navbar, footer (bg-dark de Bootstrap)
+   2. Warning/Gold (#ffc107) - Acentos, marca, bordes (text-warning de Bootstrap)
+   3. Danger/Red (#dc3545) - Link activo del navbar (text-danger de Bootstrap)
+   4. Light (#f8f9fa) - Columnas laterales (bg-light de Bootstrap)
+   5. White (#ffffff) - Fondo principal del contenido
+*/
+
+/* Estilos base del documento */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal ocupa todo el espacio disponible para empujar el footer abajo */
+.container-fluid.mt-3 {
+  flex: 1;
+}

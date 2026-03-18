@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titulo del sitio web del blog -->
+  <title>La 5ta Esencia - Blog</title>
+
+  <!-- Task 1: Bootstrap CSS CDN - se instala en el head para cargar los estilos de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YcnS/1p8Ry+JpDs10FLlC4oSMRMV29HJjKa" crossorigin="anonymous">
+
+  <!-- Hoja de estilos personalizada - se carga despues de Bootstrap para poder sobreescribir estilos -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- Task 3: Navbar refactorizado con el componente Navbar de Bootstrap -->
+  <!-- Se usa navbar-expand-lg para que sea responsive y colapse en pantallas pequenas -->
+  <!-- Los colores usan las clases de Bootstrap: navbar-dark y bg-dark -->
+  <!-- ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Marca/Logo del blog -->
+      <a class="navbar-brand fw-bold text-warning" href="index.html">La 5ta Esencia</a>
+
+      <!-- Boton hamburguesa para pantallas pequenas (responsive) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links de navegacion - Home, About Us, Contact Us segun el wireframe -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Link activo para Home (pagina actual) - se usa text-danger para el rojo como en el wireframe -->
+          <li class="nav-item">
+            <a class="nav-link active text-danger fw-bold" aria-current="page" href="index.html">Home</a>
+          </li>
+          <!-- Separador visual entre links -->
+          <li class="nav-item d-flex align-items-center">
+            <span class="text-secondary">|</span>
+          </li>
+          <!-- Link a la pagina About Us -->
+          <li class="nav-item">
+            <a class="nav-link text-light" href="about.html">About Us</a>
+          </li>
+          <!-- Separador visual entre links -->
+          <li class="nav-item d-flex align-items-center">
+            <span class="text-secondary">|</span>
+          </li>
+          <!-- Link a la pagina Contact Us -->
+          <li class="nav-item">
+            <a class="nav-link text-light" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- Task 4: Contenido principal del Home Page -->
+  <!-- Se usa el grid system de Bootstrap con 3 columnas segun el wireframe: -->
+  <!-- col-2 (AD) | col-8 (Content) | col-2 (News) -->
+  <!-- ============================================================ -->
+  <div class="container-fluid mt-3">
+    <div class="row" style="min-height: 70vh;">
+
+      <!-- ======================================================== -->
+      <!-- Columna izquierda: Espacio reservado para anuncios (AD) -->
+      <!-- Segun las instrucciones, este espacio queda vacio para futuras actualizaciones -->
+      <!-- ======================================================== -->
+      <div class="col-lg-2 bg-light border-end">
+        <div class="p-3 text-center text-muted">
+          <h5 class="text-secondary">AD</h5>
+          <p class="small fst-italic">Espacio reservado para anunciantes</p>
+        </div>
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- Columna central: Contenido principal del blog -->
+      <!-- Aqui va el contenido con texto, imagenes y videos segun Task 4 -->
+      <!-- Se usan clases de Bootstrap para tipografia y espaciado -->
+      <!-- ======================================================== -->
+      <div class="col-lg-8">
+        <div class="p-4">
+
+          <!-- Encabezado principal del blog con clases de Bootstrap para texto -->
+          <h1 class="display-4 text-center text-dark mb-4">Bienvenidos a La 5ta Esencia</h1>
+          <p class="lead text-center text-secondary mb-5">
+            El blog donde exploramos el arte de las tablas de quesos gourmet, maridajes y experiencias culinarias.
+          </p>
+
+          <hr class="my-4">
+
+          <!-- Primer articulo del blog - usa card de Bootstrap para estructura -->
+          <article class="mb-5">
+            <div class="card border-warning">
+              <div class="card-body">
+                <h2 class="card-title text-dark">El Arte de Armar una Tabla de Quesos Perfecta</h2>
+                <p class="card-text text-secondary small">Publicado el 15 de marzo, 2026 | Por el equipo de La 5ta Esencia</p>
+                <p class="card-text">
+                  Crear una tabla de quesos no es solo colocar ingredientes al azar. Es una experiencia sensorial
+                  que combina texturas, sabores y colores para deleitar a tus invitados. En La 5ta Esencia,
+                  cada tabla es ensamblada a mano con los mejores productos frescos y artesanales.
+                </p>
+                <p class="card-text">
+                  Desde quesos suaves como el brie y el camembert, hasta opciones mas intensas como el queso azul
+                  o el manchego curado, la clave esta en el equilibrio. Acompana con frutas frescas, frutos secos,
+                  miel y un buen vino para completar la experiencia.
+                </p>
+                <!-- Imagen representativa usando una imagen placeholder -->
+                <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=800&h=400&fit=crop"
+                  class="img-fluid rounded my-3" alt="Tabla de quesos gourmet">
+              </div>
+            </div>
+          </article>
+
+          <!-- Segundo articulo del blog -->
+          <article class="mb-5">
+            <div class="card border-warning">
+              <div class="card-body">
+                <h2 class="card-title text-dark">Maridaje: Quesos y Vinos que Debes Probar</h2>
+                <p class="card-text text-secondary small">Publicado el 10 de marzo, 2026 | Por el equipo de La 5ta Esencia</p>
+                <p class="card-text">
+                  El maridaje entre quesos y vinos es todo un arte. Un queso de cabra fresco combina perfectamente
+                  con un Sauvignon Blanc, mientras que un Gouda anejo se lleva de maravilla con un Cabernet Sauvignon.
+                </p>
+                <p class="card-text">
+                  En nuestro servicio de delivery, ofrecemos opciones personalizadas para cada ocasion:
+                  cumpleanos, bodas, aniversarios y eventos corporativos. Cada tabla se disena pensando en
+                  la armonia de sabores y la presentacion visual.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tercer articulo del blog -->
+          <article class="mb-5">
+            <div class="card border-warning">
+              <div class="card-body">
+                <h2 class="card-title text-dark">5 Tips para Tu Primer Evento con Tabla de Quesos</h2>
+                <p class="card-text text-secondary small">Publicado el 5 de marzo, 2026 | Por el equipo de La 5ta Esencia</p>
+                <!-- Lista usando clases de Bootstrap -->
+                <ol class="list-group list-group-numbered list-group-flush">
+                  <li class="list-group-item">Calcula aproximadamente 150g de queso por persona.</li>
+                  <li class="list-group-item">Incluye al menos 3 tipos diferentes de queso (suave, semi-curado y curado).</li>
+                  <li class="list-group-item">Saca los quesos del refrigerador 30 minutos antes de servir.</li>
+                  <li class="list-group-item">Anade complementos como nueces, uvas, higos y mermeladas.</li>
+                  <li class="list-group-item">Presenta todo en una tabla de madera para un look rustico y elegante.</li>
+                </ol>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video embebido de YouTube como contenido multimedia -->
+          <div class="text-center mb-4">
+            <h3 class="text-dark mb-3">Aprende con nosotros</h3>
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/LoApOhkFe50" title="Video sobre tablas de quesos"
+                allowfullscreen></iframe>
+            </div>
+            <p class="text-muted mt-2 small">Video: Como armar una tabla de quesos paso a paso</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- Columna derecha: Espacio reservado para noticias (News) -->
+      <!-- Segun las instrucciones, este espacio queda vacio para futuras actualizaciones -->
+      <!-- ======================================================== -->
+      <div class="col-lg-2 bg-light border-start">
+        <div class="p-3 text-center text-muted">
+          <h5 class="text-secondary">News</h5>
+          <p class="small fst-italic">Espacio reservado para noticias del blog</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Footer: Contiene los nombres del equipo y emails de contacto -->
+  <!-- Se usa bg-dark y text-light de Bootstrap para el estilo oscuro -->
+  <!-- ============================================================ -->
+  <footer class="bg-dark text-light py-4 mt-3">
+    <div class="container">
+      <div class="row">
+        <!-- Informacion del equipo -->
+        <div class="col-md-6">
+          <h5 class="text-warning">Equipo - La 5ta Esencia</h5>
+          <ul class="list-unstyled small">
+            <li>Fernando - fernando@5taesencia.com</li>
+            <li>Daniel - daniel@5taesencia.com</li>
+            <li>Vianey - vianey@5taesencia.com</li>
+            <li>Vero - vero@5taesencia.com</li>
+            <li>Brenda - brenda@5taesencia.com</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-warning">&nbsp;</h5>
+          <ul class="list-unstyled small">
+            <li>Victor - victor@5taesencia.com</li>
+            <li>Eduardo - eduardo@5taesencia.com</li>
+            <li>Angel - angel@5taesencia.com</li>
+            <li>Alejandro - alejandro@5taesencia.com</li>
+            <li>Christian - christian@5taesencia.com</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Copyright con clase de Bootstrap para texto centrado -->
+      <div class="text-center mt-3 border-top pt-3">
+        <p class="mb-0 small">&copy; 2026 La 5ta Esencia - Blog de Quesos Gourmet. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Task 1: Bootstrap JS Bundle CDN - se instala antes del cierre del body -->
+  <!-- Incluye Popper.js necesario para componentes como dropdowns y tooltips -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Script personalizado del proyecto -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
