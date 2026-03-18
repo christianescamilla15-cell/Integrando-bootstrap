@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titulo de la pagina Contact Us -->
+  <title>La 5ta Esencia - Contact Us</title>
+
+  <!-- Task 1: Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de estilos personalizada -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- Task 3: Navbar de Bootstrap - mismo en todas las paginas -->
+  <!-- En Contact Us, el link activo (rojo) es "Contact Us" segun el wireframe -->
+  <!-- ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Marca/Logo del blog -->
+      <a class="navbar-brand fw-bold text-warning" href="index.html">La 5ta Esencia</a>
+
+      <!-- Boton hamburguesa para pantallas pequenas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links de navegacion - Contact Us esta activo (rojo) en esta pagina -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="index.html">Home</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="text-secondary">|</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="text-secondary">|</span>
+          </li>
+          <!-- Link activo - Contact Us en rojo como indica el wireframe -->
+          <li class="nav-item">
+            <a class="nav-link active text-danger fw-bold" aria-current="page" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- Task 6: Contenido principal del Contact Us -->
+  <!-- Misma estructura de 3 columnas: AD | Content | News -->
+  <!-- Contiene un formulario de Bootstrap con email, textarea y boton -->
+  <!-- Al hacer clic en el boton se muestra una alerta live con dismiss -->
+  <!-- ============================================================ -->
+  <div class="container-fluid mt-3">
+    <div class="row" style="min-height: 70vh;">
+
+      <!-- Columna izquierda: Espacio reservado para anuncios (AD) -->
+      <div class="col-lg-2 bg-light border-end">
+        <div class="p-3 text-center text-muted">
+          <h5 class="text-secondary">AD</h5>
+          <p class="small fst-italic">Espacio reservado para anunciantes</p>
+        </div>
+      </div>
+
+      <!-- Columna central: Formulario de contacto -->
+      <div class="col-lg-8">
+        <div class="p-4">
+
+          <!-- Titulo de la seccion -->
+          <h1 class="display-4 text-center text-dark mb-4">Contactanos</h1>
+          <p class="lead text-center text-secondary mb-5">
+            Envianos un mensaje y nos pondremos en contacto contigo lo antes posible.
+          </p>
+
+          <hr class="my-4">
+
+          <!-- ====================================================== -->
+          <!-- Contenedor para la alerta live - Task 6 requiere que -->
+          <!-- al hacer clic en enviar, aparezca una alerta con dismiss -->
+          <!-- ====================================================== -->
+          <div id="liveAlertPlaceholder"></div>
+
+          <!-- ====================================================== -->
+          <!-- Task 6: Formulario de Bootstrap con email y textarea -->
+          <!-- Se usa el componente Form de Bootstrap -->
+          <!-- El boton dispara una alerta live con JavaScript -->
+          <!-- ====================================================== -->
+          <div class="card border-warning">
+            <div class="card-body">
+              <h2 class="card-title text-dark mb-4">Enviar Mensaje</h2>
+
+              <form id="contactForm">
+                <!-- Campo de Email - componente form de Bootstrap -->
+                <div class="mb-3">
+                  <label for="emailInput" class="form-label fw-bold">Correo Electronico</label>
+                  <input type="email" class="form-control" id="emailInput"
+                    placeholder="tucorreo@ejemplo.com" required>
+                  <div class="form-text">Nunca compartiremos tu correo con nadie.</div>
+                </div>
+
+                <!-- Campo de Asunto -->
+                <div class="mb-3">
+                  <label for="subjectInput" class="form-label fw-bold">Asunto</label>
+                  <input type="text" class="form-control" id="subjectInput"
+                    placeholder="Escribe el asunto de tu mensaje" required>
+                </div>
+
+                <!-- Campo de Textarea - componente form de Bootstrap -->
+                <div class="mb-3">
+                  <label for="messageTextarea" class="form-label fw-bold">Mensaje</label>
+                  <textarea class="form-control" id="messageTextarea" rows="5"
+                    placeholder="Escribe tu mensaje aqui..." required></textarea>
+                </div>
+
+                <!-- Boton de envio - conectado al email y textarea -->
+                <!-- Al hacer clic dispara la alerta live mediante JavaScript -->
+                <button type="submit" class="btn btn-warning fw-bold" id="sendButton">
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Informacion de contacto adicional -->
+          <div class="card border-warning mt-4">
+            <div class="card-body">
+              <h3 class="card-title text-dark">Informacion de Contacto</h3>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-2"><strong class="text-warning">Email:</strong> 5taesencia@vinoyquesito.com</li>
+                <li class="mb-2"><strong class="text-warning">Telefono:</strong> (555) 123 4567</li>
+                <li class="mb-2"><strong class="text-warning">Horario:</strong> Lunes a Sabado, 9:00 AM - 8:00 PM</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Columna derecha: Espacio reservado para noticias (News) -->
+      <div class="col-lg-2 bg-light border-start">
+        <div class="p-3 text-center text-muted">
+          <h5 class="text-secondary">News</h5>
+          <p class="small fst-italic">Espacio reservado para noticias del blog</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Footer: Mismo footer en todas las paginas con nombres y emails -->
+  <!-- ============================================================ -->
+  <footer class="bg-dark text-light py-4 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="text-warning">Equipo - La 5ta Esencia</h5>
+          <ul class="list-unstyled small">
+            <li>Fernando - fernando@5taesencia.com</li>
+            <li>Daniel - daniel@5taesencia.com</li>
+            <li>Vianey - vianey@5taesencia.com</li>
+            <li>Vero - vero@5taesencia.com</li>
+            <li>Brenda - brenda@5taesencia.com</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-warning">&nbsp;</h5>
+          <ul class="list-unstyled small">
+            <li>Victor - victor@5taesencia.com</li>
+            <li>Eduardo - eduardo@5taesencia.com</li>
+            <li>Angel - angel@5taesencia.com</li>
+            <li>Alejandro - alejandro@5taesencia.com</li>
+            <li>Christian - christian@5taesencia.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-3 border-top pt-3">
+        <p class="mb-0 small">&copy; 2026 La 5ta Esencia - Blog de Quesos Gourmet. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script personalizado -->
+  <script src="script.js"></script>
+
+  <!-- ============================================================ -->
+  <!-- Task 6: Script para la alerta live cuando el usuario envia el formulario -->
+  <!-- Muestra un alert de Bootstrap con boton de dismiss -->
+  <!-- ============================================================ -->
+  <script>
+    // Funcion que crea una alerta live de Bootstrap con boton de dismiss
+    // Se activa cuando el usuario hace clic en "Enviar Mensaje"
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+
+    function showAlert(message, type) {
+      // Crear el HTML de la alerta usando el componente Alert de Bootstrap
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        '<div class="alert alert-' + type + ' alert-dismissible fade show" role="alert">',
+        '   <strong>' + message + '</strong>',
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('');
+
+      // Insertar la alerta en el placeholder
+      alertPlaceholder.append(wrapper);
+    }
+
+    // Escuchar el evento submit del formulario
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      // Prevenir que el formulario recargue la pagina
+      event.preventDefault();
+
+      // Mostrar la alerta live de "Message sent" con opcion de dismiss
+      showAlert('Message sent! Tu mensaje ha sido enviado exitosamente.', 'success');
+
+      // Limpiar el formulario despues de enviar
+      this.reset();
+    });
+  </script>
+
+</body>
+
+</html>

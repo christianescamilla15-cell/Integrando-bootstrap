@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titulo de la pagina About Us -->
+  <title>La 5ta Esencia - About Us</title>
+
+  <!-- Task 1: Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de estilos personalizada -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- Task 3: Navbar de Bootstrap - mismo en todas las paginas -->
+  <!-- En About Us, el link activo (rojo) es "About Us" segun el wireframe -->
+  <!-- ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Marca/Logo del blog -->
+      <a class="navbar-brand fw-bold text-warning" href="index.html">La 5ta Esencia</a>
+
+      <!-- Boton hamburguesa para pantallas pequenas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links de navegacion - About Us esta activo (rojo) en esta pagina -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="index.html">Home</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="text-secondary">|</span>
+          </li>
+          <!-- Link activo - About Us en rojo como indica el wireframe -->
+          <li class="nav-item">
+            <a class="nav-link active text-danger fw-bold" aria-current="page" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="text-secondary">|</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- Task 5: Contenido principal del About Us -->
+  <!-- Misma estructura de 3 columnas: AD | Content | News -->
+  <!-- El contenido explica quienes somos y por que existe el proyecto -->
+  <!-- ============================================================ -->
+  <div class="container-fluid mt-3">
+    <div class="row" style="min-height: 70vh;">
+
+      <!-- Columna izquierda: Espacio reservado para anuncios (AD) -->
+      <div class="col-lg-2 bg-light border-end">
+        <div class="p-3 text-center text-muted">
+          <h5 class="text-secondary">AD</h5>
+          <p class="small fst-italic">Espacio reservado para anunciantes</p>
+        </div>
+      </div>
+
+      <!-- Columna central: Contenido About Us -->
+      <div class="col-lg-8">
+        <div class="p-4">
+
+          <!-- Titulo de la seccion -->
+          <h1 class="display-4 text-center text-dark mb-4">Sobre Nosotros</h1>
+          <p class="lead text-center text-secondary mb-5">
+            Conoce al equipo detras de La 5ta Esencia y nuestra pasion por los quesos gourmet.
+          </p>
+
+          <hr class="my-4">
+
+          <!-- Seccion: Por que existe este proyecto -->
+          <section class="mb-5">
+            <div class="card border-warning">
+              <div class="card-body">
+                <h2 class="card-title text-dark">Por que existe La 5ta Esencia?</h2>
+                <p class="card-text">
+                  La 5ta Esencia nacio de una idea simple pero poderosa: llevar la experiencia de las tablas de
+                  quesos gourmet directamente a tu hogar. Creemos que los momentos especiales merecen sabores
+                  especiales, y que no necesitas ir a un restaurante de lujo para disfrutar de una seleccion
+                  artesanal de quesos perfectamente maridados.
+                </p>
+                <p class="card-text">
+                  Nuestro proyecto comenzo como una iniciativa estudiantil y se convirtio en algo mas grande:
+                  un servicio de delivery que conecta a productores locales de quesos artesanales con personas
+                  que buscan experiencias culinarias unicas para cumpleanos, bodas, aniversarios y eventos
+                  corporativos.
+                </p>
+                <!-- Imagen del equipo -->
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=400&fit=crop"
+                  class="img-fluid rounded my-3" alt="Equipo de trabajo colaborando">
+              </div>
+            </div>
+          </section>
+
+          <!-- Seccion: Nuestros valores -->
+          <section class="mb-5">
+            <div class="card border-warning">
+              <div class="card-body">
+                <h2 class="card-title text-dark">Nuestros Valores</h2>
+                <!-- Lista de valores usando list-group de Bootstrap -->
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <strong class="text-warning">Calidad</strong> - Seleccionamos los mejores productos frescos y artesanales.
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="text-warning">Artesania</strong> - Cada tabla es ensamblada a mano con dedicacion.
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="text-warning">Puntualidad</strong> - Entregamos a tiempo para que tu evento sea perfecto.
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="text-warning">Personalizacion</strong> - Adaptamos cada pedido a tus gustos y necesidades.
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="text-warning">Comunidad</strong> - Trabajamos con productores locales para apoyar la economia regional.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seccion: El equipo -->
+          <section class="mb-5">
+            <div class="card border-warning">
+              <div class="card-body">
+                <h2 class="card-title text-dark mb-3">Nuestro Equipo</h2>
+                <p class="card-text mb-3">
+                  Somos un equipo de 10 personas apasionadas por la gastronomia y el servicio al cliente.
+                  Cada uno aporta habilidades unicas que hacen posible La 5ta Esencia.
+                </p>
+                <!-- Grid de miembros del equipo usando Bootstrap grid -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Fernando - Fundador</li>
+                      <li class="list-group-item">Daniel - Desarrollo</li>
+                      <li class="list-group-item">Vianey - Diseno</li>
+                      <li class="list-group-item">Vero - Marketing</li>
+                      <li class="list-group-item">Brenda - Logistica</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Victor - Operaciones</li>
+                      <li class="list-group-item">Eduardo - Finanzas</li>
+                      <li class="list-group-item">Angel - Contenido</li>
+                      <li class="list-group-item">Alejandro - Tecnologia</li>
+                      <li class="list-group-item">Christian - Soporte</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Columna derecha: Espacio reservado para noticias (News) -->
+      <div class="col-lg-2 bg-light border-start">
+        <div class="p-3 text-center text-muted">
+          <h5 class="text-secondary">News</h5>
+          <p class="small fst-italic">Espacio reservado para noticias del blog</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Footer: Mismo footer en todas las paginas con nombres y emails -->
+  <!-- ============================================================ -->
+  <footer class="bg-dark text-light py-4 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="text-warning">Equipo - La 5ta Esencia</h5>
+          <ul class="list-unstyled small">
+            <li>Fernando - fernando@5taesencia.com</li>
+            <li>Daniel - daniel@5taesencia.com</li>
+            <li>Vianey - vianey@5taesencia.com</li>
+            <li>Vero - vero@5taesencia.com</li>
+            <li>Brenda - brenda@5taesencia.com</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-warning">&nbsp;</h5>
+          <ul class="list-unstyled small">
+            <li>Victor - victor@5taesencia.com</li>
+            <li>Eduardo - eduardo@5taesencia.com</li>
+            <li>Angel - angel@5taesencia.com</li>
+            <li>Alejandro - alejandro@5taesencia.com</li>
+            <li>Christian - christian@5taesencia.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-3 border-top pt-3">
+        <p class="mb-0 small">&copy; 2026 La 5ta Esencia - Blog de Quesos Gourmet. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script personalizado -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
